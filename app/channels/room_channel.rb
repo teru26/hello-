@@ -9,6 +9,8 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    Message.create! content: data['message']
+    if /^\w*$/ =~ data['message']
+      Message.create! content: data['message'], user: current_user, chat_id: data['chat_id']
+    end
   end
 end

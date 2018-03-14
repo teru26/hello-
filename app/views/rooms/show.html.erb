@@ -1,9 +1,26 @@
-<h1>Chat room</h1>
-<div id="messages">
+<h1 class="chat">Chat room</h1>
+<h2>Welcome  <%= current_user.username %> Esq</h2>
+<div id="messages" class="baloon">　
   <%= render @messages %>
 </div>
-
+<p id="notice"><%= notice %></p>
+<% if user_signed_in? %>
+<p>
+  <strong class="name">Name:</strong>
+  <%= current_user.username %>
+</p>
+  <p><strong class="fl">Friends list</strong></p>
+  <% current_user.friends.includes(:chats).each do |friend| %>
+    <% chat_id = Chat.where(user1: current_user, user2: friend).or(Chat.where(user2: current_user, user1: friend)).first %>
+    <div><%= link_to friend.username, chat_path(chat_id || 0) %></div>
+  <% end %>
+<% end %>
 <form>
-  <label>コメントしてね！:</label><br>
-  <input type="text" data-behavior="room_speaker">
+  <label class="cmt">comment</label>
+  <input  type="text" class="comment" data-behavior="room_speaker">
 </form>
+<% @users.each do |user| %>
+  <%= form_tag "/users/#{user.id}/make_friend" do %>
+    <div class="mkbtn"><%= submit_tag "Become friends with #{user.username}" %></div>
+  <% end %>
+<% end %>

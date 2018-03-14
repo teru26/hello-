@@ -12,5 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require turbolinks
 //= require_tree .
+
+//$(function(){ $(document).foundation(); });
+
+$(function() {
+  $('#menu-btn').click(function(e) {
+    $('.side-bar').toggleClass('side-bar_hidden');
+    e.preventDefault();
+  });
+})

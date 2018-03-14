@@ -1,0 +1,20 @@
+<div class="sup">
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <span>
+      <%= f.label :email, class="animation-input-form" %><br />
+      <%= f.email_field :email, autofocus: true %>
+    </span>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>>
+
+<%= render "devise/shared/links" %>
+</div>

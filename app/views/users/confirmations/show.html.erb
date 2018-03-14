@@ -1,0 +1,40 @@
+<h2>User information registration</h2>
+
+<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name)) do |f| %>
+  <%= f.hidden_field :confirmation_token %>
+
+  <%= devise_error_messages! %>
+
+  <div>
+    <%= f.label :id %> <br />
+    <%= f.text_field :identification, placeholder: "ぷれーすほるだーs" %>
+  </div>
+
+  <div>
+    <%= f.label :username %><br />
+    <%= f.text_field :username, placeholder: "名前を入力してください！" %>
+  </div>
+
+  <div>
+    <%= f.label :icon %><br />
+    <%= f.file_field :icon%>
+  </div>
+
+  <script>alert("aaaaaaaaaaaaaaa");</script>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off", placeholder: "６文字以上でお願いします！"%>
+  </div>
+
+
+
+  <div class="actions">
+    <%= f.submit "registration" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>

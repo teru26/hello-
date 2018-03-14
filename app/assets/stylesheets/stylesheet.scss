@@ -1,0 +1,219 @@
+@mixin epic-sides() { // http://codepen.io/MichaelArestad/pen/qltuk
+    position: relative;
+    z-index: 1;
+
+    &:before {
+        position: absolute;
+        content: "";
+        display: block;
+        top: 0;
+        left: -5000px;
+        height: 100%;
+        width: 15000px;
+        z-index: -1;
+        @content;
+    }
+}
+
+#menu-btn {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+.name {
+  font-size: 23px;
+}
+
+.fl {
+  font-size: 23px;
+}
+
+.comment {
+  color: red;
+}
+body {
+  margin: 0;
+}
+
+.message {
+  font-size: 20px;
+  padding: 13px 10px 14px 10px;
+  background-color: #4fff3a;
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+#messages {
+  padding: 10px;
+}
+
+.message:before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: #4fff3a;
+  position: absolute;
+  display: block;
+  top: calc(50% - 9px);
+  left: -8px;
+  transform: rotateZ(45deg);
+}
+
+.main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+.baloon {
+  width: 70%;
+  margin: 0 auto;
+  border: 3px dotted;
+}
+
+.mkbtn {
+  background: -moz-linear-gradient(top, #fff, #F1F1F1 1%, #F1F1F1 50%, #DFDFDF 99%, #ccc);
+background: -webkit-gradient(linear, left top, left bottom, from(#fff), color-stop(0.01, #F1F1F1), color-stop(0.5, #F1F1F1), color-stop(0.99, #DFDFDF), to(#ccc));
+}
+
+.header {
+  position: fixed;
+  height: 70px;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  display: flex;
+  //padding: 50000px;
+}
+
+.container {
+  padding-top: 70px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.animation-input-form {
+  content: '';
+  width: 200px;
+  height: 10px;
+  border-color: #789;
+  opacity: 0.7;
+  transform: rotateZ(50deg);
+}
+
+.side-bar {
+  position: fixed;
+  top: 50px;
+  background-color: #FFFAFA;
+  width: 200px;
+  height: calc(100% - 50px);
+}
+
+.side-bar_hidden {
+  display: none;;
+}
+
+.message_right {
+  transform: translateX(550px);
+}
+
+.message_right:before {
+  left: inherit;
+  right: -8px;
+}
+
+//ろぐいん画面
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
+
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+.fast {
+  background: #fafafa;
+  margin: 3em auto;
+  padding: 0 1em;
+  max-width: 370px;
+}
+
+h2 {
+  text-align: center;
+  padding: 1em 0;
+}
+
+body {
+  background: #e9e9e9;
+  color: #5e5e5e;
+  font: 400 87.5%/1.5em 'Open Sans', sans-serif;
+}
+
+.filed {
+  padding: 0 1.5em;
+}
+
+.filed-item {
+  margin-bottom: 0.75em;
+  width: 100%;
+}
+
+.filed-item input {
+  background: #fafafa;
+  border: none;
+  border-bottom: 2px solid #e9e9e9;
+  color: #666;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  height: 50px;
+  transition: border-color 0.3s;
+  width: 100%;
+}
+
+.filed-item input:focus {
+  border-bottom: 2px solid #c0c0c0;
+  outline: none;
+}
+
+.button-panel {
+  margin: 2em 0 0;
+  width: 100%;
+}
+
+.button-panel .button {
+  background: #f16272;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  height: 50px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  transition:  0.3s ease-in-out;
+  width: 100%;
+}
+
+.button:hover {
+  background: #ee3e52;
+}
+
+.form-footer {
+  font-size: 1em;
+  padding: 2em 0;
+  text-align: center;
+}
+
+.form-footer a {
+  color: #8c8c8c;
+  text-decoration: none;
+  transition: border-color 0.3s;
+}
+
+.form-footer a:hover {
+  border-bottom: 1px dotted #8c8c8c;
+}
